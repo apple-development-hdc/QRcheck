@@ -1,0 +1,41 @@
+<div class = "container" style ="width: 600px;">
+<div class="panel panel-primary" >
+        <div class="panel-heading">
+            <h4 >Employee - QR</h4>
+        </div>
+        <div class="panel-body" *ngIf="employee">
+            <form #employeeForm="ngForm" class="form" role="form" (ngSubmit)="putEmployee()" style ="width: 500px;">        
+             <div class="form-group">
+               <label for="id"> Employee No:</label>
+               <input type="text" required placeholder="id" name="id" [(ngModel)]= "employee.id" class="form-control" id="id" >
+             </div>
+             <div class="form-group">
+               <label for="Name"> Employee Name</label>
+               <input type="text"   placeholder="Name"  name="Name" [(ngModel)]= "employee.Name" class="form-control" id="Name" >
+             </div>
+             <div class="form-group">
+               <label for="AssetId"> Asset No:</label>
+               <input type="text"   placeholder="AssetId"  name="AssetId" [(ngModel)]= "employee.AssetId" class="form-control" id="AssetId" >
+              </div>
+              <div class="form-group">
+               <label for="SerialTag"> Serial No: </label>
+               <input type="text"   placeholder="SerialTag" name="SerialTag" [(ngModel)]= "employee.SerialTag" class="form-control" id="SerialTag" >
+              </div>
+              <div class="form-group">
+               <label for="StartDate"> Start Date</label>
+               <input type="date"   placeholder="YYYY-MM-DD" name="StartDate" [(ngModel)]= "employee.StartDate" class="form-control" id="StartDate" >
+              </div>
+              <div class="form-group">
+               <label for="EndDate"> End Date</label>
+               <input type="date"   placeholder="YYYY-MM-DD"  name="EndDate" [(ngModel)]= "employee.EndDate" class="form-control" id="EndDate" >
+              </div>
+              <div class="form-group">
+               <label for="Email" class="control-label">Email_ID</label>
+               <input type="text"  placeholder="Email"  name="Email" [(ngModel)]= "employee.Email" class="form-control" id="Email" >
+              </div>
+               <input type="submit"  value="Save" class="btn btn-info">
+            </form>
+             <div class ="text-danger" *ngIf="error.isError">{{error.errorMessage}}</div>
+        </div> 
+       </div>
+    </div>

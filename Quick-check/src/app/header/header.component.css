@@ -1,0 +1,17 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.tab{
+    font-family:Arial, "Helvetica", sans-serif;
+    font-size:20px;
+    margin-top: 5px;
+    margin-left: 30px;
+    text-align: center; 
+
+  }
+#tab{
+    font-family:Arial, "Helvetica", sans-serif;
+    margin-top: 5px;
+    font-size:20px;
+    margin-left: 30px;
+    text-align: center;
+}

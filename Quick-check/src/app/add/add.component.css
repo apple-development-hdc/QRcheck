@@ -1,0 +1,82 @@
+
+.container{
+    margin-top: 10%;
+  }
+  
+  ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+  ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+  
+   input[type="text"] {
+    background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
+    border: 1px solid #a1a3a3;
+    border-radius: 4px;
+    box-shadow: 0 1px #fff;
+    box-sizing: border-box;
+    color: #696969;
+    height: 39px;
+    margin: 15px 0 0 55px;
+    padding-left: 45px;
+    transition: box-shadow 0.3s;
+    width: 180px;
+  }
+   input[type="text"]:focus {
+    box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
+    outline: 0;
+  }
+  input[type="submit"] {
+    width:150px;
+    height:35px;
+    display:block;
+    font-family:Arial, "Helvetica", sans-serif;
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+    text-decoration:none;
+    text-transform:uppercase;
+    text-align:center;
+    text-shadow:1px 1px 0px #37a69b;
+    padding-top:6px;
+    margin: 15px 0 0 70px;
+    position:relative;
+    cursor:pointer;
+    border: none;
+    background-color: #37a69b;
+    background-image: linear-gradient(top,#3db0a6,#3111);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius:5px;
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+  }
+  
+  .shadow {
+    background: #000;
+    border-radius: 12px 12px 4px 4px;
+    box-shadow: 0 0 20px 10px #000;
+    height: 12px;
+    margin: 30px auto;
+    opacity: 0.2;
+    width: 270px;
+  }
+  
+  
+  input[type="submit"]:active {
+    top:3px;
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
+  }
+  
+  html, body
+  {
+      width: 100%;
+      height: 91%;
+  }
+  
+  
+  body {
+    padding: 10px;
+    position: absolute;
+   background-image: url("/assets/img/loginimg.jpg") !important;
+        background-size: cover;
+        background-position: center center;
+  
+  }
