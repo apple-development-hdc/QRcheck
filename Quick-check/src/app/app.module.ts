@@ -22,8 +22,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     LoginComponent,
     LogoutComponent,
     AddComponent,
-    FormComponent,
-    EmployeeinfoComponent
+    FormComponent
   ],
   imports: [
     BrowserModule,

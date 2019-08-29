@@ -15,7 +15,6 @@ const routes: Routes = [
     {path: 'check', component: CheckComponent},
     {path: 'add', component: AddComponent, canActivate: [AuthGaurdService]},
   {path: 'edit/:id', component: FormComponent, canActivate: [AuthGaurdService]},
-  {path: 'employee/:id', component: EmployeeinfoComponent, canActivate: [AuthGaurdService]}
 ];
 
 @NgModule({
