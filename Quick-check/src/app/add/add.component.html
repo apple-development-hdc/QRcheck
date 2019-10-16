@@ -1,0 +1,18 @@
+<div class = "container" style ="width: 350px;">
+<div class="panel panel-primary" >
+      <div class="panel-heading">
+        <h4 >Employee - ID</h4>
+    </div>
+    <div class="panel-body">
+        <form #employeeid="ngForm" style ="width: 50px;">
+      <div class="form-group" >
+        <input type="text" placeholder="Emp_ID"  name="id" [(ngModel)]= "employee.id" class="form-control" id="id">
+    </div>
+      <input (click)=putemployee()  type="submit" value="Check"class="btn btn-info">
+    </form>
+</div>
+</div>
+</div>
+
+
+  
