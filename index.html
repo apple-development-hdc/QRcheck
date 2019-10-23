@@ -36,27 +36,24 @@
     }
 
     function validateQR(abc){
-      var url = "http://localhost:8080/QRauth/code/" + abc;
-      loadJSON(url,gotData,'jsonp');
-    }
-
-    function gotData(data){
-      var today = new Date();
-      var currdate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-      var enddate = data.enddate;
-      if(enddate!=null){
-        if(currdate.getTime() <= enddate.getTime()){
-          var SuccessWindow = window.open("", "SuccessWindow", "top=300,left=300,width=400,height=250");
-          SuccessWindow.document.write('<button onclick="SuccessWindow.close()" style="padding: 20px; margin: 20px; font-size:350%; background: rgb(28, 184, 65);color: white; border-radius: 10px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);;">Success</button>"');
-        }else if(currdate.getTime() > enddate.getTime()){
-          var FailureWindow = window.open("", "FailureWindow", "top=300,left=300,width=400,height=250");
-          FailureWindow.document.write('<button onclick="FailureWindow.close()" style="padding: 20px; margin: 20px; font-size:350%; background: rgb(202, 60, 60);color: white; border-radius: 10px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);;">Failure</button>"');
-        }
-      }
-      else{
-        var NotFoundWindow = window.open("", "NotFoundWindow", "top=300,left=300,width=400,height=250");
-        NotFoundWindow.document.write('<button onclick="NotFoundWindow.close()" style="padding: 20px; margin: 20px; font-size:350%; background: rgb(128, 128, 128);color: black; border-radius: 10px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);;">Success</button>"');
-      }
+      fetch('http://localhost:8080/QRauth/code/' + abc)
+        .then(res => res.json())
+        .then((out) => {
+            var result = out.valid;
+            if(result!=null){
+              if(result === true){
+                var SuccessWindow = window.open("", "SuccessWindow", "top=300,left=300,width=350,height=180");
+                SuccessWindow.document.write('<button style="padding: 20px; margin: 20px; font-size:350%; background: rgb(28, 184, 65);color: white; border-radius: 10px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);">Success</button>');
+              }else if(result === false){
+                var FailureWindow = window.open("", "FailureWindow", "top=300,left=300,width=350,height=180");
+                FailureWindow.document.write('<button style="padding: 20px; margin: 20px; font-size:350%; background: rgb(202, 60, 60);color: white; border-radius: 10px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);">Failure</button>');
+              }
+            }
+            else{
+              var NotFoundWindow = window.open("", "NotFoundWindow", "top=300,left=300,width=700,height=200");
+              NotFoundWindow.document.write('<button style="padding: 20px; margin: 20px; font-size:350%; background: rgb(128, 128, 128);color: black; border-radius: 10px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);">404! User Not Found</button>');
+            }
+        }).catch(err => console.error(err));
     }
 
     navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
